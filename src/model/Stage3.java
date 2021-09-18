@@ -16,8 +16,8 @@ public class Stage3 {
             int time = client.getTime();
             client.setTime(time + time4Rack);
 
-            clien
-            client.getBasket().push(value);
+            /* clien
+            client.getBasket().push(value); */
         }
         return client.getTime();
     }
