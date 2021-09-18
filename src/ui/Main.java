@@ -17,48 +17,11 @@ public class Main extends Application{
     private static App app;
 
     public static void main(String[] args) {
-        //app = new App();
-
-        HasTableTAD<String, Integer> hash = new HasTableTAD<>();
-
-        try {
-            hash.insert("A", 1);
-            hash.insert("B", 2);
-            hash.insert("C", 3);
-            hash.insert("D", 4);
-            hash.insert("E", 5);
-            hash.insert("F", 6);
-
-        } catch (NullKeyException | FullTable e) {
-            e.printStackTrace();
-        }
-
-        System.out.println(hash.search("B"));
-        System.out.println(hash.search("D"));
-        System.out.println(hash.search("G"));
-
-        System.out.println(hash.toString());
-
-
-        hash.delete("C");
-
-        System.out.println(hash.search("C"));
-        System.out.println(hash.toString());
-
-        try {
-            hash.insert("G", 7);
-        } catch (NullKeyException | FullTable e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        System.out.println("---------------");
-        System.out.println(hash.search("G"));
-        System.out.println(hash.toString());
+        app = new App();
         
         //launch(args);
 
-        System.exit(0);
+        //System.exit(0);
     }
 
     @Override
