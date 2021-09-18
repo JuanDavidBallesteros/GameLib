@@ -1,29 +1,38 @@
 package model;
 
-public class QueueTAD<T> {
+import TADAction.QueueAction;
+
+public class QueueTAD<T> implements QueueAction<T> {
 
     private Node first;
+    private int size;
 
-    public QueueTAD(){}
+    public QueueTAD(){
+        size = 0;
+    }
 
+    @Override
     public void add(T value){
         Node temp =  new Node(value);
 
         if(first == null){
             first = temp;
+            size = 1;
         } else {
             boolean validation = false;
             Node node = first;
             while (!validation) {
-                node = node.getNextNode();
                 if(node.getNextNode() == null){
                     node.setNextNode(temp);
+                    size++;
                     validation = true;
                 }
+                node = node.getNextNode();
             }
         }
     }
 
+    @Override
     public boolean isEmpty(){
         if(first ==  null){
             return true;
@@ -32,14 +41,21 @@ public class QueueTAD<T> {
         }
     }
 
+    @Override
     public T front(){
         return first.getValue();
     }
 
+    @Override
     public T dequeue(){
         T temp = first.getValue();
         first = first.getNextNode();
+        size--;
         return temp;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public class Node {
