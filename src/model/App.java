@@ -1,5 +1,12 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import routes.Routes;
+
 public class App {
 
     private QueueTAD<Client> clients;
@@ -8,8 +15,38 @@ public class App {
     private Stage3 s3;
     private Stage4 s4;
 
-    public App() {
+    public App() throws IOException {
+        games = new ArrayList<>();
+        loadGames();
     }
+
+    // -----------------------------------------------> Start Simulation
+    
+    private ArrayList<Game> games;
+    public ArrayList<Game> getGames() {
+        return games;
+    }
+
+    private void loadGames() throws IOException {
+
+        /* String currentPath = new java.io.File(".").getCanonicalPath(); // Get actual path
+        System.out.println(currentPath); */
+        BufferedReader br = new BufferedReader(new FileReader(Routes.GAMES_DATA.getRoute()));
+        String line = br.readLine();
+        line = br.readLine();
+
+        while (line != null) {
+            String[] parts = line.split(","); 
+
+            Game temp = new Game(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), parts[2]);
+            games.add(temp);
+            line = br.readLine();
+        }
+
+        br.close();
+    }
+
+    // ---------------------------------------------> Getter and Setters
 
     public QueueTAD<Client> getClients() {
         return clients;
