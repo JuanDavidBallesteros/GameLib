@@ -1,6 +1,7 @@
 package ui;
 
 import controller.MainGUI;
+import exception.FullTable;
 import exception.NullKeyException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +19,7 @@ public class Main extends Application{
     public static void main(String[] args) {
         //app = new App();
 
-        /* HasTableTAD<String, Integer> hash = new HasTableTAD<>();
+        HasTableTAD<String, Integer> hash = new HasTableTAD<>();
 
         try {
             hash.insert("A", 1);
@@ -27,7 +28,8 @@ public class Main extends Application{
             hash.insert("D", 4);
             hash.insert("E", 5);
             hash.insert("F", 6);
-        } catch (NullKeyException e) {
+
+        } catch (NullKeyException | FullTable e) {
             e.printStackTrace();
         }
 
@@ -35,9 +37,28 @@ public class Main extends Application{
         System.out.println(hash.search("D"));
         System.out.println(hash.search("G"));
 
-        System.out.println(hash.toString()); */
+        System.out.println(hash.toString());
+
+
+        hash.delete("C");
+
+        System.out.println(hash.search("C"));
+        System.out.println(hash.toString());
+
+        try {
+            hash.insert("G", 7);
+        } catch (NullKeyException | FullTable e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        System.out.println("---------------");
+        System.out.println(hash.search("G"));
+        System.out.println(hash.toString());
         
-        launch(args);
+        //launch(args);
+
+        System.exit(0);
     }
 
     @Override

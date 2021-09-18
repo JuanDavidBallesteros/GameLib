@@ -4,15 +4,17 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 import TADAction.HashTableAction;
+import exception.FullTable;
 import exception.NullKeyException;
 
-public class HasTableTAD<K,V> implements HashTableAction<K, V> {
+public class HasTableTAD<K, V> implements HashTableAction<K, V> {
 
-    public static final int SIZE = 127;
-    private ArrayList<HashNode<K,V>> nodes;
+    public static final int SIZE = 6;
+    private ArrayList<HashNode<K, V>> nodes;
+    private HashNode<K,V> deleted;
 
-    public HasTableTAD(){
-        nodes = new ArrayList<HashNode<K,V>>();
+    public HasTableTAD() {
+        nodes = new ArrayList<HashNode<K, V>>();
 
         for (int i = 0; i < SIZE; i++) {
             nodes.add(null);
@@ -20,53 +22,59 @@ public class HasTableTAD<K,V> implements HashTableAction<K, V> {
     }
 
     @Override
-    public void insert(K key, V value) throws NullKeyException  { // Error key = null o Lleno
+    public void insert(K key, V value) throws NullKeyException, FullTable { // Error key = null o Lleno
 
         if (key == null)
             throw new NullKeyException();
 
-        HashNode<K,V> temp = new HashNode<K,V>(key, value);
+        HashNode<K, V> temp = new HashNode<K, V>(key, value);
         int k = Objects.hashCode(temp.getKey());
-        int i = hkFunction(k);
 
-        if(nodes.get(i) == null){
-            nodes.set(i, temp);
-        } else {
-            HashNode<K,V> node = nodes.get(i);
-            boolean validation = false;
-            while (!validation) {
-                if(node.getNextNode() == null){
-                    node.setNextNode(temp);
-                    temp.setBackNode(node);
-                    validation = true;
-                }
-                node = node.getNextNode();
+        for (int i = 0; i < SIZE; i++) {
+            int pos = hkFunction(k, i);
+
+            if (nodes.get(pos) == null || nodes.get(pos).equals(deleted)) {
+                nodes.set(pos, temp);
+                return;
             }
-        }        
+        }
+        throw new FullTable();
+
     }
 
-    private int hkFunction(int k){
-        double a = ((5)^(1/2))/2 ;
-        return (int)(SIZE*((k*a)%1));
+    private int hkFunction(int k, int i) {
+        return (int) ((k % SIZE) + i) % SIZE;
     }
 
     @Override
     public V search(K key) {
         int k = Objects.hashCode(key);
-        int i = hkFunction(k);
-        if(nodes.get(i) != null){
-            return nodes.get(i).getValue();
-        } else {
-            return null;
+
+        for (int i = 0; i < SIZE; i++) {
+            int pos = hkFunction(k, i);
+            if (nodes.get(pos) != null &&  nodes.get(pos).getKey() == key) {
+                if(nodes.get(pos) != deleted){
+                    return nodes.get(pos).getValue();
+                }
+            }
         }
-        
+        return null;
     }
 
     @Override
     public void delete(K key) {
         int k = Objects.hashCode(key);
-        int i = hkFunction(k);
-        nodes.set(i, null);
+
+        boolean validation = false;
+
+        for (int i = 0; i < SIZE || !validation; i++) {
+            int pos = hkFunction(k, i);
+
+            if (nodes.get(pos).getKey() == key && nodes.get(pos) != null) {
+                nodes.set(pos, deleted);
+                validation = true;
+            }
+        }
     }
 
     @Override
@@ -74,5 +82,4 @@ public class HasTableTAD<K,V> implements HashTableAction<K, V> {
         return nodes.toString();
     }
 
-    
 }

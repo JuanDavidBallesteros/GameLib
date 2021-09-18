@@ -6,7 +6,6 @@ public class HashNode<K,V> {
         private HashNode<K,V> backNode;
         private V value;
         private K key;
-
         
         public HashNode(K key, V value){
             this.value = value;
