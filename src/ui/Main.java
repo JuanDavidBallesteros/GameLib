@@ -22,10 +22,7 @@ public class Main extends Application{
             e.printStackTrace();
         }
 
-        for (int i = 0; i < app.getGames().size(); i++) {
-            System.out.println(app.getGames().get(i).getName());
-        }
-        //launch(args);
+        launch(args);
 
         System.exit(0);
     }

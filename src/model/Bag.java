@@ -7,5 +7,8 @@ public class Bag {
         games = new StackTAD<>();
     }
 
+    public StackTAD<Game> getGames() {
+        return games;
+    }
     
 }

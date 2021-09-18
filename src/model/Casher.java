@@ -8,5 +8,21 @@ public class Casher {
         this.payTime = payTime;
     }
 
+    public int getPayTime() {
+        return payTime;
+    }
+
+    public void setPayTime(int payTime) {
+        this.payTime = payTime;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
     
 }

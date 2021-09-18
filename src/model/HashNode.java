@@ -23,6 +23,10 @@ public class HashNode<K,V> {
         public V getValue() {
             return value;
         }
+    
+        public void setValue(V value) {
+            this.value = value;
+        }
 
         public HashNode<K,V> getBackNode() {
             return backNode;

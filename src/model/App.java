@@ -16,27 +16,33 @@ public class App {
     private Stage4 s4;
 
     public App() throws IOException {
+        clients = new QueueTAD<>();
         games = new ArrayList<>();
         loadGames();
     }
 
     // -----------------------------------------------> Start Simulation
-    
+
+    // --------------- Import games
+
     private ArrayList<Game> games;
+
     public ArrayList<Game> getGames() {
         return games;
     }
 
     private void loadGames() throws IOException {
 
-        /* String currentPath = new java.io.File(".").getCanonicalPath(); // Get actual path
-        System.out.println(currentPath); */
+        /*
+         * String currentPath = new java.io.File(".").getCanonicalPath(); // Get actual
+         * path System.out.println(currentPath);
+         */
         BufferedReader br = new BufferedReader(new FileReader(Routes.GAMES_DATA.getRoute()));
         String line = br.readLine();
         line = br.readLine();
 
         while (line != null) {
-            String[] parts = line.split(","); 
+            String[] parts = line.split(",");
 
             Game temp = new Game(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), parts[2]);
             games.add(temp);
@@ -45,6 +51,8 @@ public class App {
 
         br.close();
     }
+
+    // --------------- Set Objects
 
     // ---------------------------------------------> Getter and Setters
 
@@ -88,5 +96,7 @@ public class App {
         this.s4 = s4;
     }
 
-        
+    public void restart() {
+
+    }
 }

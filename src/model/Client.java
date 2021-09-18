@@ -8,9 +8,9 @@ public class Client {
     private String listCode;
     private String id;
 
-    private QueueTAD<Game> bagT;
+    private QueueTAD<String> sortedRacksList;
     private Bag bag;
-    private StackTAD<Game> shoppingBag;
+    private StackTAD<Game> basket;
 
     private int time;
     private int arrivalNum;
@@ -24,5 +24,72 @@ public class Client {
         this.sortingAlgorithm = sortingAlgorithm;
     }
 
+    public ArrayList<Game> getGamesList() {
+        return gamesList;
+    }
+
+    public String getListCode() {
+        return listCode;
+    }
+
+    public void setListCode(String listCode) {
+        this.listCode = listCode;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public QueueTAD<String> getSortedRacksList() {
+        return sortedRacksList;
+    }
+
+    public void setSortedRacksList(QueueTAD<String> sortedRacksList) {
+        this.sortedRacksList = sortedRacksList;
+    }
+
+    public Bag getBag() {
+        return bag;
+    }
+
+    public void setBag(Bag bag) {
+        this.bag = bag;
+    }
+
+    public StackTAD<Game> getBasket() {
+        return basket;
+    }
+
+    public void setBasket(StackTAD<Game> basket) {
+        this.basket = basket;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public int getArrivalNum() {
+        return arrivalNum;
+    }
+
+    public void setArrivalNum(int arrivalNum) {
+        this.arrivalNum = arrivalNum;
+    }
+
+    public boolean isSortingAlgorithm() {
+        return sortingAlgorithm;
+    }
+
+    public void setSortingAlgorithm(boolean sortingAlgorithm) {
+        this.sortingAlgorithm = sortingAlgorithm;
+    }
     
 }

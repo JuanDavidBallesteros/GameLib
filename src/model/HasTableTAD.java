@@ -77,6 +77,21 @@ public class HasTableTAD<K, V> implements HashTableAction<K, V> {
         }
     }
 
+    public void setValue(K key, V value){
+        int k = Objects.hashCode(key);
+
+        for (int i = 0; i < SIZE; i++) {
+            int pos = hkFunction(k, i);
+            if (nodes.get(pos) != null &&  nodes.get(pos).getKey() == key) {
+                if(nodes.get(pos) != deleted){
+                    nodes.get(pos).setValue(value);
+                    return;
+                }
+            }
+        }
+        return ;
+    }
+
     @Override
     public String toString() {
         return nodes.toString();
