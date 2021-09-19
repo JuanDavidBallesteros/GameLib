@@ -1,0 +1,34 @@
+
+.paneInput{
+    -fx-background-image: url('/img/VideoGame3.jpg');
+    -fx-background-size: 100% 100%;
+}
+
+.startButton:hover{
+    -fx-background-color: #000000;
+    -fx-border-color: #fc7791;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.startButton{
+    -fx-border-radius: 40px;
+    -fx-border-width:  2px 2px 2px 2px;
+    -fx-border-color:  #fc7791;
+    -fx-background-color:   #1D1B20;
+    -fx-background-radius: 40px;
+}
+
+.resetButton:hover{
+    -fx-background-color: #000000;
+    -fx-border-color: #fc7791;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.resetButton{
+    -fx-border-radius: 40px;
+    -fx-border-width:  2px 2px 2px 2px;
+    -fx-border-color:  #fc7791;
+    -fx-background-color:   #1D1B20;
+    -fx-background-radius: 40px;
+}
+
