@@ -2,13 +2,15 @@ package model;
 
 public class Game {
     private int id;
-    private String name;
+    private int amount;
+    private String rack;
     private int cost;
     
-    public Game(int id, int cost, String name) {
+    public Game(int id, int amount, String rack,int cost) {
         this.id = id;
+        this.amount = amount;
+        this.amount = amount;
         this.cost = cost;
-        this.name = name;
     }
 
     public int getId() {
@@ -19,12 +21,12 @@ public class Game {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getRack() {
+        return rack;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRack(String rack) {
+        this.rack = rack;
     }
 
     public int getCost() {
@@ -34,6 +36,15 @@ public class Game {
     public void setCost(int cost) {
         this.cost = cost;
     }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+    
 
     
 }

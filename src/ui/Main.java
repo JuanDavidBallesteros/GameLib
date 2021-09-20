@@ -29,13 +29,18 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        MainGUI gui = new MainGUI(app);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Routes.MAIN_VIEW.getRoute()));
+        
+        MainGUI gui = new MainGUI(app);
+
+
         fxmlLoader.setController(gui);
         Parent root = fxmlLoader.load();
+
         Scene scene = new Scene(root);
         //scene.getStylesheets().add(getClass().getResource("assets/styles/styles.css").toExternalForm());
         primaryStage.setScene(scene);
+        primaryStage.setTitle("GameLib Store");
         primaryStage.show();
         gui.inputView(); 
     }

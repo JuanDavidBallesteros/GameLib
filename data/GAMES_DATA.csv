@@ -1,101 +1,50 @@
-id,cost,name
-1,83077,Midsummer Night's Party
-2,76477,Pretty Poison
-3,72147,Endeavour
-4,57589,Before Flying Back to Earth (Pries parskrendant i zeme)
-5,71573,På sista versen
-6,77553,King of Germany
-7,67734,Billion Dollar Brain
-8,62222,One Direction: This Is Us
-9,69864,Never Sleep Again: The Elm Street Legacy
-10,84565,Kronos
-11,77214,Family Band: The Cowsills Story 
-12,67669,Tokyo.Sora
-13,76159,Love Is Strange
-14,61525,Big Empty
-15,69795,Goddess of 1967,
-16,65809,Alien from L.A.
-17,73363,SOS 
-18,62689,You and Me
-19,78613,Guy and a Gal
-20,81639,Unknown Soldier
-21,55872,The African
-22,86271,Chasing Christmas
-23,65367,All I Want for Christmas
-24,67946,Clockwise
-25,81012,Bikes vs Cars
-26,75129,R-Point (Arpointeu)
-27,75119,Midnight in Paris
-28,71552,Here Comes Peter Cottontail 
-29,63444,Tuya's Marriage (Tuya de hun shi)
-30,83078,Ali Zoua: Prince of the Streets
-31,74533,Man Hunt
-32,77404,Infidel
-33,82081,Zombie Lake
-34,77538,Babylon XX
-35,70722,Boy A
-36,72323,Rosewood
-37,49536,Atlantis: The Lost Empire
-38,61004,Beaver
-39,90651,Akira Kurosawa's Dreams
-40,75350,Tales from the Darkside: The Movie
-41,71493,CJ7 (Cheung Gong 7 hou)
-42,70120,Side by Side
-43,88866,Steamboat Round the Bend
-44,65303,Alice in Wonderland
-45,78189,Couples Retreat
-46,69099,I Want to Be a Soldier
-47,74607,Unfinished Life
-48,74592,Fools' Parade
-49,75068,Our Little Differences
-50,88363,Bill & Ted's Excellent Adventure
-51,86914,Dancer Upstairs
-52,77962,The Last Round
-53,59326,To the Devil a Daughter
-54,85333,Creature Wasn't Nice
-55,78371,Long Gray Line
-56,60720,Against The Sun
-57,77405,The Plague of the Zombies
-58,50398,Dead Meat
-59,77602,Day for Night (La Nuit Américaine)
-60,69234,Bhaji on the Beach
-61,72472,Play Girl
-62,76670,Up the Down Staircase
-63,70106,Johnny Tremain
-64,65291,Magic Voyage of Sindbad
-65,57880,Calling Bulldog Drummond
-66,82029,Des roses en hiver
-67,89084,And Starring Pancho Villa as Himself
-68,66593,Heima
-69,59267,Wrong Cops
-70,64062,Now You See Me
-71,68770,"Reivers
-72,63687,Spy(ies) (Espion(s))
-73,86655,Mystic River
-74,59099,ewsies
-75,56805,"Hole in the Head
-76,68664,Double Whammy
-77,70846,Spitfire Grill
-78,66148,Darwin's Nightmare
-79,69542,Ultimate AccessoryThe (100% cachemire)
-80,71336,Viva María!
-81,90781,Last Lovecraft: Relic of Cthulhu
-82,81116,Teen Spirit
-83,74219,Jeffrey
-84,58958,Better Tomorrow III: Love and Death in Saigon
-85,64734,Devil's Rejects
-86,74705,Unborn in the USA: Inside the War on Abortion
-87,62997,Veronica Guerin
-88,70836,Lagaan: Once Upon a Time in India
-89,68261,Bad Luck (Zezowate szczescie)
-90,43840,Six Degrees of Separation
-91,56484,The Adventures of Tom Thumb & Thumbelina
-92,84145,Bamboozled
-93,77203,Solo Sunny
-94,84634,Nightwing
-95,49287,Projectionist
-96,77418,Tora-san's Love Call (Otoko wa tsurai yo: Torajiro koiuta)
-97,65874,Stone Angel
-98,64695,Paternity
-99,62593,Mighty Macs
-100,68921,Frankenstein
+Game;Amount;Rack;Cost
+331;3;A;17000
+465;6;A;60000
+612;2;A;80000
+971;6;A;70000
+441;3;B;30000
+112;6;B;22000
+229;6;B;28000
+281;2;B;38000
+333;6;B;43000
+767;2;C;40000
+287;6;C;65000
+161;98;D;68000
+678;21;D;13000
+408;54;D;78000
+923;138;D;27000
+569;26;D;43000
+678;45;E;63000
+131;70;E;18000
+970;12;E;50000
+580;127;E;68000
+781;61;E;44000
+382;49;E;64000
+568;81;F;14000
+263;96;F;55000
+400;74;F;67000
+983;59;F;37000
+546;134;G;25000
+325;84;G;16000
+971;39;G;67000
+334;84;H;61000
+132;52;H;68000
+882;46;H;69000
+702;107;H;12000
+340;41;I;87000
+614;115;I;80000
+219;19;I;11000
+913;33;I;57000
+125;102;I;51000
+566;64;I;11000
+174;120;J;64000
+314;36;J;34000
+898;155;J;79000
+833;39;J;41000
+930;161;K;65000
+190;6;K;68000
+834;71;L;68000
+750;192;M;40000
+435;122;M;62000
+492;143;M;92000

@@ -37,14 +37,15 @@ public class App {
          * String currentPath = new java.io.File(".").getCanonicalPath(); // Get actual
          * path System.out.println(currentPath);
          */
+
         BufferedReader br = new BufferedReader(new FileReader(Routes.GAMES_DATA.getRoute()));
         String line = br.readLine();
         line = br.readLine();
 
         while (line != null) {
-            String[] parts = line.split(",");
+            String[] parts = line.split(";");
 
-            Game temp = new Game(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), parts[2]);
+            Game temp = new Game(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), parts[2],Integer.parseInt(parts[3]));
             games.add(temp);
             line = br.readLine();
         }
