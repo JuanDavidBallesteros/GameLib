@@ -65,7 +65,7 @@ public class Stage2 {
 
 
     private <E extends Comparable<E>> QueueTAD<String> selectionSort(ArrayList<Rack> list){
-      QueueTAD queue=null;
+      QueueTAD<String> queue=null;
         int i, x =0;
         Rack key;
         for (i=1; i<list.size(); i++){
@@ -78,8 +78,8 @@ public class Stage2 {
             list.set(x+1,key);
            
         }
-        for(int y=0;x<list.size();x++){
-           // QueueTAD.add(list.get(x))
+        for(int y=0;y<list.size();y++){
+           queue.add(list.get(y));
         }
         return queue;
     }    
