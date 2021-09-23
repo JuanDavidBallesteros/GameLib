@@ -1,6 +1,8 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Stage2 {
     
@@ -61,8 +63,25 @@ public class Stage2 {
         return null;
     }
 
-    private QueueTAD<String> selectionSort(ArrayList<Rack> list){
-        return null;
-    }
+
+    private <E extends Comparable<E>> QueueTAD<String> selectionSort(ArrayList<Rack> list){
+      QueueTAD<String> queue=null;
+        int i, x =0;
+        Rack key;
+        for (i=1; i<list.size(); i++){
+            key= list.get(i);
+            x = i - 1; 
+            while (x >= 0 && list.get(x).compareTo(key) > 0){
+                list.set(x+1, list.get(x)); 
+                x--;
+            }
+            list.set(x+1,key);
+           
+        }
+        for(int y=0;y<list.size();y++){
+           queue.add(list.get(y));
+        }
+        return queue;
+    }    
     
 }

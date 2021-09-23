@@ -67,6 +67,9 @@ public class QueueTAD<T> implements QueueAction<T> {
             this.value = value;
         }
 
+        public Node(Rack rack) {
+        }
+
         public Node getNextNode() {
             return nextNode;
         }
@@ -79,5 +82,24 @@ public class QueueTAD<T> implements QueueAction<T> {
             return value;
         }        
 
+    }
+
+    public void add(Rack rack) {
+        Node temp =  new Node(rack);
+        if(first == null){
+            first = temp;
+            size = 1;
+        } else {
+            boolean validation = false;
+            Node node = first;
+            while (!validation) {
+                if(node.getNextNode() == null){
+                    node.setNextNode(temp);
+                    size++;
+                    validation = true;
+                }
+                node = node.getNextNode();
+            }
+        }
     }
 }
