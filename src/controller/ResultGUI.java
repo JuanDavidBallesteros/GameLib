@@ -24,7 +24,9 @@ public class ResultGUI {
 
     @FXML
     public void newSimulation(ActionEvent event) throws IOException {
+        
         mainGUI.inputView();
+        
     }
 
     @FXML

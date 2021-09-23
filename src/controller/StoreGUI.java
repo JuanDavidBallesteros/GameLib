@@ -18,7 +18,7 @@ public class StoreGUI {
     public void testing(){
        new Thread(()->{
             try {
-                Thread.sleep(2500);
+                Thread.sleep(250000000);
                 Platform.runLater(()->{
                     try {
                         mainGUI.resultView();

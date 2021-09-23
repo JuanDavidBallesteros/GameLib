@@ -18,6 +18,7 @@ public class Main extends Application{
     public static void main(String[] args) {
         try {
             app = new App();
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -33,7 +34,6 @@ public class Main extends Application{
         
         MainGUI gui = new MainGUI(app);
 
-
         fxmlLoader.setController(gui);
         Parent root = fxmlLoader.load();
 
@@ -42,6 +42,7 @@ public class Main extends Application{
         primaryStage.setScene(scene);
         primaryStage.setTitle("GameLib Store");
         primaryStage.show();
+        
         gui.inputView(); 
     }
 

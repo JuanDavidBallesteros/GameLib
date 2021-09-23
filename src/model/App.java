@@ -45,7 +45,7 @@ public class App {
         while (line != null) {
             String[] parts = line.split(";");
 
-            Game temp = new Game(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), parts[2],Integer.parseInt(parts[3]));
+            Game temp = new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]), parts[2] ,Integer.parseInt(parts[3]));
             games.add(temp);
             line = br.readLine();
         }

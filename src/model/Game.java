@@ -8,10 +8,12 @@ public class Game {
     
     public Game(int id, int amount, String rack,int cost) {
         this.id = id;
-        this.amount = amount;
+        this.rack = rack;
         this.amount = amount;
         this.cost = cost;
     }
+
+   
 
     public int getId() {
         return id;

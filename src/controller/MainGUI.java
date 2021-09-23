@@ -16,11 +16,15 @@ public class MainGUI extends Stage {
 
     private App app;
 
+
     @FXML
     private Pane mainPane;
 
+    
     public MainGUI(App app) {
         this.app = app;
+        
+
     }
 
     // ----------------------------- Navigation
@@ -29,8 +33,11 @@ public class MainGUI extends Stage {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Routes.INPUT_VIEW.getRoute()));
         InputGUI controller = new InputGUI(this, app);
         fxmlLoader.setController(controller);
+
         Parent view = fxmlLoader.load();
         mainPane.getChildren().setAll(view);
+        controller.initializeTableView();
+
     }
 
     public void storeView() throws IOException {
@@ -61,4 +68,6 @@ public class MainGUI extends Stage {
 
         alert.showAndWait();
     }
+
+    
 }
