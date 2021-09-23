@@ -58,8 +58,27 @@ public class Stage2 {
     // ---------------------------------------------> Sorting algorithms
 
     private QueueTAD<Game> insertionSort(ArrayList<Game> list){
-        return null;
-    }
+    	
+    	        QueueTAD<Game> queue = new QueueTAD<>();
+    	        
+    	        for (int i = 0; i < list.size(); i++) {
+    	            Game minor = list.get(i);
+
+    	            for (int j = i + 1; (j < list.size()); j++) {
+    	                if (minor.compareTo(list.get(j)) > 0) {
+    	                    Game temp = list.get(j);
+    	                    list.set(j, minor);
+    	                    list.set(i, temp);
+    	                }
+    	            }
+    	        }
+
+    	        for (Game game : list) {
+    	            queue.add(game);
+    	        }
+    	    
+    	        return queue;
+    	    }   
 
 
     private QueueTAD<Game> selectionSort(ArrayList<Game> list){
