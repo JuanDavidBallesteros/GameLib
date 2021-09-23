@@ -8,7 +8,7 @@ public class Client {
     private String listCode;
     private String id;
 
-    private QueueTAD<String> sortedRacksList;
+    private QueueTAD<Game> sortedGameList;
     private Bag bag;
     private StackTAD<Game> basket;
 
@@ -44,12 +44,12 @@ public class Client {
         this.id = id;
     }
 
-    public QueueTAD<String> getSortedRacksList() {
-        return sortedRacksList;
+    public QueueTAD<Game> getSortedGameList() {
+        return sortedGameList;
     }
 
-    public void setSortedRacksList(QueueTAD<String> sortedRacksList) {
-        this.sortedRacksList = sortedRacksList;
+    public void setSortedGameList(QueueTAD<Game> sortedGameList) {
+        this.sortedGameList = sortedGameList;
     }
 
     public Bag getBag() {

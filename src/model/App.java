@@ -10,7 +10,7 @@ import routes.Routes;
 public class App {
 
     private QueueTAD<Client> clients;
-    private Stage1 s1;
+
     private Stage2 s2;
     private Stage3 s3;
     private Stage4 s4;
@@ -63,14 +63,6 @@ public class App {
 
     public void setClients(QueueTAD<Client> clients) {
         this.clients = clients;
-    }
-
-    public Stage1 getS1() {
-        return s1;
-    }
-
-    public void setS1(Stage1 s1) {
-        this.s1 = s1;
     }
 
     public Stage2 getS2() {

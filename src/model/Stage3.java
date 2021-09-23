@@ -11,13 +11,12 @@ public class Stage3 {
 
     public int addTimeToClient(Client client){
 
-        while (client.getSortedRacksList().getSize() > 0) {
-            client.getSortedRacksList().dequeue();
+        while (client.getSortedGameList().getSize() > 0) {
+            Game temp = client.getSortedGameList().dequeue();
             int time = client.getTime();
             client.setTime(time + time4Rack);
 
-            /* clien
-            client.getBasket().push(value); */
+            client.getBasket().push(temp);
         }
         return client.getTime();
     }

@@ -1,6 +1,6 @@
 package model;
 
-public class Game {
+public class Game implements Comparable<Game> {
     private int id;
     private int amount;
     private String rack;
@@ -45,6 +45,13 @@ public class Game {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+
+
+    @Override
+    public int compareTo(Game o) {
+        return rack.compareTo(o.getRack());
     }
     
 
