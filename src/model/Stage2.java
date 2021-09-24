@@ -1,14 +1,11 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class Stage2 {
     
     private int clientCount;
     private int waitingTime;
-    private ArrayList<Rack> racks;
 
     public Stage2(int waitingTime){
         clientCount = 0;
@@ -22,7 +19,8 @@ public class Stage2 {
     }
 
     // ---------------------------------------------> Search game in racks
-    private Rack searchGameInRacks(Game game){
+
+    /* private Rack searchGameInRacks(Game game){
 
         for (int i = 0; i < racks.size() ; i++) {
             if(racks.get(i).buyGame(game) != null ){
@@ -30,11 +28,11 @@ public class Stage2 {
             }
         }
         return null;
-    }
+    } */
 
     // ---------------------------------------------> Return racks list
 
-    private ArrayList<Rack> getRacksList(ArrayList<Game> gamesList){
+    /* private ArrayList<Rack> getRacksList(ArrayList<Game> gamesList){
 
         ArrayList<Rack> list = new ArrayList<>();
         for (int i = 0; i < gamesList.size(); i++) {
@@ -42,46 +40,72 @@ public class Stage2 {
             list.add(searchGameInRacks(gm));
         }
         return list;
-    }
+    } */
 
     // ---------------------------------------------> Return sorted racks list by selected algorithm
 
-    public QueueTAD<String> getSortedRackList(Client client){
-        ArrayList<Rack> list = getRacksList(client.getGamesList());
+    public QueueTAD<Game> getSortedRackList(Client client){
+        ArrayList<Game> list = (client.getGamesList());
         if(client.isSortingAlgorithm()){
-            client.setSortedRacksList(insertionSort(list));
+            client.setSortedGameList(insertionSort(list));
             return insertionSort(list);
         }else{
-            client.setSortedRacksList(selectionSort(list));
+            client.setSortedGameList(selectionSort(list));
             return selectionSort(list);
         }
     }
 
     // ---------------------------------------------> Sorting algorithms
 
-    private QueueTAD<String> insertionSort(ArrayList<Rack> list){
-        return null;
-    }
+    private QueueTAD<Game> insertionSort(ArrayList<Game> list){
+    	
+    	        QueueTAD<Game> queue = new QueueTAD<>();
+    	        
+    	        for (int i = 0; i < list.size(); i++) {
+    	            Game minor = list.get(i);
+
+    	            for (int j = i + 1; (j < list.size()); j++) {
+    	                if (minor.compareTo(list.get(j)) > 0) {
+    	                    Game temp = list.get(j);
+    	                    list.set(j, minor);
+    	                    list.set(i, temp);
+    	                }
+    	            }
+    	        }
+
+    	        for (Game game : list) {
+    	            queue.add(game);
+    	        }
+    	    
+    	        return queue;
+    	    }   
 
 
-    private <E extends Comparable<E>> QueueTAD<String> selectionSort(ArrayList<Rack> list){
-      QueueTAD<String> queue=null;
-        int i, x =0;
-        Rack key;
-        for (i=1; i<list.size(); i++){
-            key= list.get(i);
-            x = i - 1; 
-            while (x >= 0 && list.get(x).compareTo(key) > 0){
-                list.set(x+1, list.get(x)); 
-                x--;
+    private QueueTAD<Game> selectionSort(ArrayList<Game> list){
+        QueueTAD<Game> queue = new QueueTAD<>();
+        
+        for (int i = 0; i < list.size(); i++) {
+            Game minor = list.get(i);
+            int pos = i;
+
+            for (int j = i + 1; j < list.size(); j++) {
+                if (minor.compareTo(list.get(j)) > 0) {
+                    minor = list.get(j);
+                    pos = j;
+                }
             }
-            list.set(x+1,key);
-           
+            Game temp = list.get(i);
+            list.set(i, minor);
+            list.set(pos, temp);
         }
-        for(int y=0;y<list.size();y++){
-           queue.add(list.get(y));
+
+        for (Game game : list) {
+            queue.add(game);
         }
+    
         return queue;
     }    
+    
+
     
 }

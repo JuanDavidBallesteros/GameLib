@@ -1,11 +1,9 @@
 package model;
 
-import java.util.Comparator;
-
 import exception.FullTable;
 import exception.NullKeyException;
 
-public class Rack implements Comparable{
+public class Rack implements Comparable<Rack>{
 
     private HasTableTAD<Game, Integer> games; // Key => Game Object - Value => Number of games available
     private String letter;
@@ -38,7 +36,7 @@ public class Rack implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(Rack o) {
         return letter.compareTo(((Rack) o).getLetter());
 
     }

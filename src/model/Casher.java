@@ -8,6 +8,17 @@ public class Casher {
         this.payTime = payTime;
     }
 
+    public synchronized void passClient(){
+        
+        while (client.getBasket().getSize() > 0) {
+            int cTime = client.getTime();
+            client.setTime(cTime + payTime);
+            client.getBag().getGames().push(client.getBasket().pop());
+        }
+
+        client = null;
+    }
+
     public int getPayTime() {
         return payTime;
     }
@@ -20,7 +31,7 @@ public class Casher {
         return client;
     }
 
-    public void setClient(Client client) {
+    public synchronized void setClient(Client client) {
         this.client = client;
     }
 
