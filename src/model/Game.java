@@ -51,7 +51,7 @@ public class Game implements Comparable<Game> {
 
     @Override
     public int compareTo(Game o) {
-        return rack.compareTo(o.getRack());
+        return this.getRack().compareTo(o.getRack());
     }
     
 

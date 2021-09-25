@@ -135,22 +135,29 @@ public class App {
 
         System.out.println("");
 
+        StackTAD<Client> outList = new StackTAD<>();
+
         for (; !clients.isEmpty(); ) {
+           outList.push(clients.dequeue());
+        }
+
+        for (; !outList.isEmpty(); ) {
             String line1 = "";
             String line2 = "";
 
-            line1 += clients.front().getId() + " ";
-            line1 += clients.front().getPurchaseValue();
+            line1 += outList.top().getId() + " ";
+            line1 += outList.top().getPurchaseValue();
 
-            for (int j = 0; j < clients.front().getBag().getGames().getSize(); j++) {
-                line2 += clients.front().getBag().getGames().pop().getId();
+            for (int j = 0; j < outList.top().getBag().getGames().getSize(); j++) {
+                line2 += outList.top().getBag().getGames().pop().getId();
                 line2 += " ";
             }
 
             System.out.println(line1);
             System.out.println(line2);
+            System.out.println(outList.top().getTime()); // Tiempo
 
-            clients.dequeue();
+            outList.pop();
         }
 
     }

@@ -4,13 +4,16 @@ import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import model.App;
 import routes.Routes;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
 public class MainGUI extends Stage {
 
@@ -36,7 +39,6 @@ public class MainGUI extends Stage {
 
         Parent view = fxmlLoader.load();
         mainPane.getChildren().setAll(view);
-        controller.initializeTableView();
 
     }
 
@@ -58,6 +60,49 @@ public class MainGUI extends Stage {
         mainPane.getChildren().setAll(view);
     }
 
+    public Stage addClientView() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Routes.ADD_CLIENT_VIEW.getRoute()));
+        ModalClientGUI controller = new ModalClientGUI(this, app);
+        fxmlLoader.setController(controller);
+        Parent modal = fxmlLoader.load();
+
+        
+
+        Scene  scene = new Scene(modal);
+        scene.setFill(Color.TRANSPARENT);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.TRANSPARENT);
+        controller.setStage(stage);
+        controller.initializeTableView();
+
+        stage.show();
+        
+        return stage;
+
+    }
+
+    public Stage addCashierView() throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Routes.ADD_CASHIER_VIEW.getRoute()));
+        ModalCashierGUI controller = new ModalCashierGUI(this, app);
+        fxmlLoader.setController(controller);
+        Parent modal = fxmlLoader.load();
+
+        
+
+        Scene  scene = new Scene(modal);
+        scene.setFill(Color.TRANSPARENT);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.TRANSPARENT);
+        controller.setStage(stage);
+        //controller.initializeTableView();
+
+        stage.show();
+        
+        return stage;
+    }
+
     // ----------------------------- Alerts
 
     public void alert(AlertType type, String title, String message) {
@@ -68,6 +113,8 @@ public class MainGUI extends Stage {
 
         alert.showAndWait();
     }
+
+    
 
     
 }
