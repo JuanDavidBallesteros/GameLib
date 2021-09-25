@@ -12,6 +12,8 @@ public class Client {
     private Bag bag;
     private StackTAD<Game> basket;
 
+    private int purchaseValue;
+
     private int time;
     private int arrivalNum;
 
@@ -26,6 +28,7 @@ public class Client {
         gamesList = new ArrayList<>();
         sortedGameList = new QueueTAD<>();
         basket = new StackTAD<>();
+        bag = new Bag();
     }
 
     public ArrayList<Game> getGamesList() {
@@ -95,5 +98,13 @@ public class Client {
     public void setSortingAlgorithm(boolean sortingAlgorithm) {
         this.sortingAlgorithm = sortingAlgorithm;
     }
+
+    public int getPurchaseValue() {
+        return purchaseValue;
+    }
+
+    public void setPurchaseValue(int purchaseValue) {
+        this.purchaseValue = purchaseValue;
+    }    
     
 }

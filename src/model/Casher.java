@@ -9,13 +9,16 @@ public class Casher {
     }
 
     public synchronized void passClient(){
-        
-        while (client.getBasket().getSize() > 0) {
+        int purchase = 0;
+
+        while (!client.getBasket().isEmpty()) {
             int cTime = client.getTime();
             client.setTime(cTime + payTime);
+            purchase += client.getBasket().top().getCost();
             client.getBag().getGames().push(client.getBasket().pop());
         }
 
+        client.setPurchaseValue(purchase);
         client = null;
     }
 

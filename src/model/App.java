@@ -55,7 +55,7 @@ public class App {
 
     // --------------- Set Objects
 
-    public void setSimulation(int s2Time, int s3TimeRack, int timeXcasher, int cashersNum, QueueTAD<Client> clients ){
+    public void setSimulation(int s2Time, int s3TimeRack, int timeXcasher, int cashersNum, QueueTAD<Client> clients) {
         s2 = new Stage2(s2Time);
         s3 = new Stage3(s3TimeRack);
         s4 = new Stage4(cashersNum, timeXcasher);
@@ -63,7 +63,8 @@ public class App {
         this.clients = clients;
     }
 
-    public void setSimulation(int s2Time, int s3TimeRack, int timeXcasher, int cashersNum, QueueTAD<Client> clients, ArrayList<Game>  games ){
+    public void setSimulation(int s2Time, int s3TimeRack, int timeXcasher, int cashersNum, QueueTAD<Client> clients,
+            ArrayList<Game> games) {
         s2 = new Stage2(s2Time);
         s3 = new Stage3(s3TimeRack);
         s4 = new Stage4(cashersNum, timeXcasher);
@@ -73,10 +74,10 @@ public class App {
     }
 
     // ---------------------------------------------> Flow
-    
-    public void passStage2(){
 
-    QueueTAD<Client> temp = new QueueTAD<>();
+    public void passStage2() {
+
+        QueueTAD<Client> temp = new QueueTAD<>();
 
         while (!clients.isEmpty()) {
             s2.addTimeToClient(clients.front());
@@ -85,10 +86,10 @@ public class App {
         }
 
         clients = temp;
-        
+
     }
 
-    public void passStage3(){
+    public void passStage3() {
         ArrayList<Client> list = new ArrayList<>();
 
         while (!clients.isEmpty()) {
@@ -97,17 +98,18 @@ public class App {
         }
 
         QueueTAD<Client> temp = new QueueTAD<>();
-        
-        //Sorting clientes por su tiempo y añadirlos a la cola de clientes para la fase 4
+
+        // Sorting clientes por su tiempo y añadirlos a la cola de clientes para la fase
+        // 4
 
         Comparator<Client> timeComparator = new Comparator<Client>() {
 
             @Override
             public int compare(Client in1, Client in2) {
-                if(in1.getTime() - (in2.getTime()) > 0){
+                if (in1.getTime() - (in2.getTime()) > 0) {
                     return -1;
-                } else if( in1.getTime() - (in2.getTime()) < 0){
-                return 1;
+                } else if (in1.getTime() - (in2.getTime()) < 0) {
+                    return 1;
                 } else {
                     return 0;
                 }
@@ -123,11 +125,35 @@ public class App {
         clients = temp;
     }
 
-    public void passStage4(){
+    public void passStage4() {
         s4.setClientes(clients);
         clients = s4.clientsOut();
     }
 
+    // ---------------------------------------------> Response
+    public void responseStage() {
+
+        System.out.println("");
+
+        for (; !clients.isEmpty(); ) {
+            String line1 = "";
+            String line2 = "";
+
+            line1 += clients.front().getId() + " ";
+            line1 += clients.front().getPurchaseValue();
+
+            for (int j = 0; j < clients.front().getBag().getGames().getSize(); j++) {
+                line2 += clients.front().getBag().getGames().pop().getId();
+                line2 += " ";
+            }
+
+            System.out.println(line1);
+            System.out.println(line2);
+
+            clients.dequeue();
+        }
+
+    }
 
     // ---------------------------------------------> Getter and Setters
 
@@ -166,6 +192,5 @@ public class App {
     public void restart() {
 
     }
-
 
 }

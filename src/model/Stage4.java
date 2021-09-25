@@ -9,6 +9,7 @@ public class Stage4 {
 
     public Stage4(int cashersNum, int timeXcasher) {
         clients = new QueueTAD<>();
+
         this.cashers = new ArrayList<>();
         for (int i = 0; i < cashersNum; i++) {
             Casher temp = new Casher(timeXcasher);
@@ -26,10 +27,9 @@ public class Stage4 {
 
     public QueueTAD<Client> clientsOut(){
         QueueTAD<Client> out = new QueueTAD<>();
-        int control = 0;
 
-        while (control < clients.getSize()) {
-            for (int i = 0; i < cashers.size(); i++) {
+        while (!clients.isEmpty()) {
+            for (int i = 0; i < cashers.size() && !clients.isEmpty(); i++) {  // Poner limite
                 if (cashers.get(i).getClient() == null) {
                     cashers.get(i).setClient(clients.front());
                     cashers.get(i).passClient();

@@ -25,7 +25,7 @@ public class Stage2 {
     public QueueTAD<Game> getSortedRackList(Client client){
         ArrayList<Game> list = (client.getGamesList());
         if(client.isSortingAlgorithm()){
-            client.setSortedGameList(insertionSort(list));
+            client.setSortedGameList(selectionSort(list)); // change to insertion sort
             return insertionSort(list);
         }else{
             client.setSortedGameList(selectionSort(list));
@@ -48,7 +48,7 @@ public class Stage2 {
             int pos = i;
 
             for (int j = i + 1; j < list.size(); j++) {
-                if (minor.compareTo(list.get(j)) > 0) {
+                if (minor.compareTo(list.get(j)) < 0) { // > Cambio de dirección
                     minor = list.get(j);
                     pos = j;
                 }

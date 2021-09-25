@@ -9,7 +9,7 @@ import exception.NullKeyException;
 
 public class HasTableTAD<K, V> implements HashTableAction<K, V> {
 
-    public static final int SIZE = 128;
+    public static final int SIZE = 13;
     private ArrayList<HashNode<K, V>> nodes;
     private HashNode<K,V> deleted;
 
@@ -48,11 +48,11 @@ public class HasTableTAD<K, V> implements HashTableAction<K, V> {
 
     @Override
     public V search(K key) {
-        int k = Objects.hashCode(key);
+        int value = Objects.hashCode(key);
 
         for (int i = 0; i < SIZE; i++) {
-            int pos = hkFunction(k, i);
-            if (nodes.get(pos) != null &&  nodes.get(pos).getKey() == key) {
+            int pos = hkFunction(value, i);
+            if (nodes.get(pos) != null &&  nodes.get(pos).getKey().equals(key)) { // Revisar, habia key
                 if(nodes.get(pos) != deleted){
                     return nodes.get(pos).getValue();
                 }
@@ -70,7 +70,7 @@ public class HasTableTAD<K, V> implements HashTableAction<K, V> {
         for (int i = 0; i < SIZE || !validation; i++) {
             int pos = hkFunction(k, i);
 
-            if (nodes.get(pos).getKey() == key && nodes.get(pos) != null) {
+            if (nodes.get(pos).getKey().equals(key) && nodes.get(pos) != null) {
                 nodes.set(pos, deleted);
                 validation = true;
             }
@@ -82,7 +82,7 @@ public class HasTableTAD<K, V> implements HashTableAction<K, V> {
 
         for (int i = 0; i < SIZE; i++) {
             int pos = hkFunction(k, i);
-            if (nodes.get(pos) != null &&  nodes.get(pos).getKey() == key) {
+            if (nodes.get(pos) != null &&  nodes.get(pos).getKey().equals(key)) {
                 if(nodes.get(pos) != deleted){
                     nodes.get(pos).setValue(value);
                     return;
