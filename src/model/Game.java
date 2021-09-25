@@ -6,7 +6,7 @@ public class Game implements Comparable<Game> {
     private String rack;
     private int cost;
     
-    public Game(int id, int amount, String rack,int cost) {
+    public Game(int id, int amount, String rack, int cost) {
         this.id = id;
         this.rack = rack;
         this.amount = amount;

@@ -22,6 +22,10 @@ public class Client {
         this.id = id;
         this.arrivalNum = arrivalNum;
         this.sortingAlgorithm = sortingAlgorithm;
+
+        gamesList = new ArrayList<>();
+        sortedGameList = new QueueTAD<>();
+        basket = new StackTAD<>();
     }
 
     public ArrayList<Game> getGamesList() {

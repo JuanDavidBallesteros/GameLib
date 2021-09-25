@@ -18,29 +18,7 @@ public class Stage2 {
         return client.getTime();
     }
 
-    // ---------------------------------------------> Search game in racks
-
-    /* private Rack searchGameInRacks(Game game){
-
-        for (int i = 0; i < racks.size() ; i++) {
-            if(racks.get(i).buyGame(game) != null ){
-                return racks.get(i);
-            }
-        }
-        return null;
-    } */
-
-    // ---------------------------------------------> Return racks list
-
-    /* private ArrayList<Rack> getRacksList(ArrayList<Game> gamesList){
-
-        ArrayList<Rack> list = new ArrayList<>();
-        for (int i = 0; i < gamesList.size(); i++) {
-            Game gm = gamesList.get(i);
-            list.add(searchGameInRacks(gm));
-        }
-        return list;
-    } */
+    
 
     // ---------------------------------------------> Return sorted racks list by selected algorithm
 

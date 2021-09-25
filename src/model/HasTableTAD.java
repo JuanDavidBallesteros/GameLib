@@ -9,7 +9,7 @@ import exception.NullKeyException;
 
 public class HasTableTAD<K, V> implements HashTableAction<K, V> {
 
-    public static final int SIZE = 6;
+    public static final int SIZE = 128;
     private ArrayList<HashNode<K, V>> nodes;
     private HashNode<K,V> deleted;
 

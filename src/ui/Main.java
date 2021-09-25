@@ -23,9 +23,13 @@ public class Main extends Application{
             e.printStackTrace();
         }
 
-        launch(args);
+        Simulation simul = new Simulation(app);
+        simul.runSimulation();
+        //launch(args);
+        
+        
 
-        System.exit(0);
+        //System.exit(0);
     }
 
     @Override
