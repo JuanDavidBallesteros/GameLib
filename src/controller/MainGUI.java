@@ -88,6 +88,7 @@ public class MainGUI extends Stage {
         fxmlLoader.setController(controller);
         Parent modal = fxmlLoader.load();
 
+
         
 
         Scene  scene = new Scene(modal);
@@ -97,7 +98,33 @@ public class MainGUI extends Stage {
         stage.initStyle(StageStyle.TRANSPARENT);
         controller.setStage(stage);
         //controller.initializeTableView();
+        controller.comboBoxValue();
 
+
+        stage.show();
+        
+        return stage;
+    }
+
+
+   
+    public Stage informationGame() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Routes.GAME_INFORMATION_VIEW.getRoute()));
+        ModalGameInformation controller = new ModalGameInformation(this, app);
+        fxmlLoader.setController(controller);
+        Parent modal = fxmlLoader.load();
+
+
+        
+
+        Scene  scene = new Scene(modal);
+        scene.setFill(Color.TRANSPARENT);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.TRANSPARENT);
+        controller.setStage(stage);
+        controller.cbCodeGames();
+    
         stage.show();
         
         return stage;

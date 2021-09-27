@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import model.App;
@@ -13,11 +12,6 @@ public class InputGUI {
     private App app;
 
    
-
-    @FXML
-    private JFXComboBox<String> cbCashier;
-
-
     public InputGUI(MainGUI mainGUI, App app) {
         this.mainGUI = mainGUI;
         this.app = app;    
@@ -45,7 +39,7 @@ public class InputGUI {
         try {
             mainGUI.addClientView();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+            
             e.printStackTrace();
         }
 
@@ -56,10 +50,13 @@ public class InputGUI {
         try {
             mainGUI.addCashierView();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+            
             e.printStackTrace();
         }
     }
+
+
+   
 
 
     

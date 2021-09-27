@@ -1,10 +1,14 @@
 package controller;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
@@ -32,11 +36,27 @@ public class ModalClientGUI{
 
     @FXML
     private TableColumn<Game, Integer> tcCost;
+
+
+    //_________________________________________-
+
+    @FXML
+    private TableView<Game> tvGameSelect;
+
+    @FXML
+    private TableColumn<Game, Integer> tcGameSelect;
+
+    @FXML
+    private TableColumn<Game, Integer> tcCostSelect;
     
+    private ArrayList<Game> gamesSelected;
+
+   
 
     public ModalClientGUI(MainGUI mainGUI, App app) {
         this.mainGUI = mainGUI;
         this.app = app;    
+        gamesSelected = new ArrayList<>();
     }
 
     public void setStage(Stage stage) {
@@ -64,15 +84,62 @@ public class ModalClientGUI{
         tcRack.setCellValueFactory(new PropertyValueFactory<Game, String>("Rack"));
         tcCost.setCellValueFactory(new PropertyValueFactory<Game,Integer>("Cost"));
         
-        /*ObservableList<String> elements = FXCollections.observableArrayList();
 
-        elements.addAll("1","2","3","4","5");
+        tvGameList.setRowFactory(tv -> {
+            TableRow<Game> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
+                    Game temp = row.getItem();
+                    gamesSelected.add(temp);
+                    System.out.println("Double click on: "+ temp.getRack());
+                    initializeTableView();
 
-        cbCashier.setItems(elements);
+                }
+            });
+            return row ;
+        });
 
-        cbCashier.setValue("1");
-       */ 
+        ObservableList<Game> observableList2 = FXCollections.observableList(gamesSelected);
+
+        tcGameSelect.setCellValueFactory(new PropertyValueFactory<Game, Integer>("id"));
+        tcCostSelect.setCellValueFactory(new PropertyValueFactory<Game, Integer>("Cost"));
+        
+
+        tvGameSelect.setItems(observableList2);
+
+        tvGameSelect.setRowFactory(tv -> {
+            TableRow<Game> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
+                    Game temp = row.getItem();
+                    gamesSelected.remove(temp);
+                    System.out.println("Double click on: "+ temp.getRack());
+                    initializeTableView();
+
+                }
+            });
+            return row ;
+        });
+
+        
+        
+    }
+
    
+
+    
+
+
+
+
+    @FXML
+    public void informationGameButton(ActionEvent event) {
+        try {
+            mainGUI.informationGame();
+        } catch (IOException e) {
+            
+            e.printStackTrace();
+        }
     }
 
 
