@@ -40,6 +40,9 @@ public class Main extends Application{
 
         fxmlLoader.setController(gui);
         Parent root = fxmlLoader.load();
+
+
+        //Test
         
         Scene scene = new Scene(root);
         //scene.getStylesheets().add(getClass().getResource("assets/styles/styles.css").toExternalForm());
