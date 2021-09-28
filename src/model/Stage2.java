@@ -26,16 +26,18 @@ public class Stage2 {
         ArrayList<Game> list = (client.getGamesList());
         if(client.isSortingAlgorithm()){
             client.setSortedGameList(selectionSort(list)); // change to insertion sort
-            return insertionSort(list);
-        }else{
-            client.setSortedGameList(selectionSort(list));
             return selectionSort(list);
+        }else{
+            client.setSortedGameList(insertionSort(list));
+            return insertionSort(list);
         }
     }
 
     // ---------------------------------------------> Sorting algorithms
 
-    private QueueTAD<Game> insertionSort(ArrayList<Game> list){
+    private QueueTAD<Game> insertionSort(ArrayList<Game> listOriginal){
+
+        ArrayList<Game> list = new ArrayList<>(listOriginal);
     	
     	        QueueTAD<Game> queue = new QueueTAD<>();
     	        
@@ -59,7 +61,10 @@ public class Stage2 {
     	    }   
 
 
-    private QueueTAD<Game> selectionSort(ArrayList<Game> list){
+    private QueueTAD<Game> selectionSort(ArrayList<Game> listOriginal){
+
+        ArrayList<Game> list = new ArrayList<>(listOriginal);
+
         QueueTAD<Game> queue = new QueueTAD<>();
         
         for (int i = 0; i < list.size(); i++) {
@@ -67,7 +72,7 @@ public class Stage2 {
             int pos = i;
 
             for (int j = i + 1; j < list.size(); j++) {
-                if (minor.compareTo(list.get(j)) < 0) { // > Cambio de dirección
+                if (minor.compareTo(list.get(j)) > 0) { // > Cambio de dirección
                     minor = list.get(j);
                     pos = j;
                 }

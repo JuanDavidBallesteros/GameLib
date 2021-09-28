@@ -31,6 +31,18 @@ public class Client {
         bag = new Bag();
     }
 
+    public Client(String id, int arrivalNum) {  // Test Client
+        this.listCode = id;
+        this.id = id;
+        this.arrivalNum = arrivalNum;
+        this.sortingAlgorithm = true;
+
+        gamesList = new ArrayList<>();
+        sortedGameList = new QueueTAD<>();
+        basket = new StackTAD<>();
+        bag = new Bag();
+    }
+
     public ArrayList<Game> getGamesList() {
         return gamesList;
     }

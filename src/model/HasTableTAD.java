@@ -9,11 +9,14 @@ import exception.NullKeyException;
 
 public class HasTableTAD<K, V> implements HashTableAction<K, V> {
 
-    public static final int SIZE = 13;
+    public static final int SIZE = 127;
     private ArrayList<HashNode<K, V>> nodes;
     private HashNode<K,V> deleted;
 
+    private int elements;
+
     public HasTableTAD() {
+        elements = 0;
         nodes = new ArrayList<HashNode<K, V>>();
 
         for (int i = 0; i < SIZE; i++) {
@@ -35,6 +38,7 @@ public class HasTableTAD<K, V> implements HashTableAction<K, V> {
 
             if (nodes.get(pos) == null || nodes.get(pos).equals(deleted)) {
                 nodes.set(pos, temp);
+                elements++;
                 return;
             }
         }
@@ -70,9 +74,10 @@ public class HasTableTAD<K, V> implements HashTableAction<K, V> {
         for (int i = 0; i < SIZE || !validation; i++) {
             int pos = hkFunction(k, i);
 
-            if (nodes.get(pos).getKey().equals(key) && nodes.get(pos) != null) {
+            if (nodes.get(pos) != null && nodes.get(pos).getKey().equals(key)) {
                 nodes.set(pos, deleted);
                 validation = true;
+                elements--;
             }
         }
     }
@@ -97,4 +102,9 @@ public class HasTableTAD<K, V> implements HashTableAction<K, V> {
         return nodes.toString();
     }
 
+    public int getElements() {
+        return elements;
+    }
+
+    
 }
