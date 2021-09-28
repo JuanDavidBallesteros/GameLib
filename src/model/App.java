@@ -1,8 +1,10 @@
 package model;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -128,10 +130,13 @@ public class App {
     public void passStage4() {
         s4.setClientes(clients);
         clients = s4.clientsOut();
+        if(clients.isEmpty()){
+
+        }
     }
 
     // ---------------------------------------------> Response
-    public void responseStage() {
+    public void responseStage() throws IOException {
 
         System.out.println("");
 
@@ -148,18 +153,18 @@ public class App {
             line1 += outList.top().getId() + " ";
             line1 += outList.top().getPurchaseValue();
 
-            for (int j = 0; j < outList.top().getBag().getGames().getSize(); j++) {
+            int size = outList.top().getBag().getGames().getSize();
+            for (int j = 0; j < size; j++) {
                 line2 += outList.top().getBag().getGames().pop().getId();
                 line2 += " ";
             }
 
             System.out.println(line1);
             System.out.println(line2);
-            System.out.println(outList.top().getTime()); // Tiempo
+            System.out.println("time:" + outList.top().getTime()); // Tiempo
 
             outList.pop();
         }
-
     }
 
     // ---------------------------------------------> Getter and Setters
