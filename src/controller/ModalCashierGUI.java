@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import model.App;
 
@@ -32,7 +33,8 @@ public class ModalCashierGUI {
     private InputGUI inputGUI;
 
 
-    public ModalCashierGUI(InputGUI inputGUI) {
+    public ModalCashierGUI(MainGUI mainGUI,InputGUI inputGUI) {
+        this.mainGUI = mainGUI;
         this.inputGUI = inputGUI;
     }
 
@@ -54,8 +56,36 @@ public class ModalCashierGUI {
     }
 
     @FXML
-    void save(ActionEvent event) {
+    public void save(ActionEvent event) {
+        String s2Time = timeTable.getText();
+        String s3TimeRack = timeRack.getText();
+        String timeXcasher = timeCasher.getText();
 
-        stage.close();
+        
+
+        if(!s2Time.equals("") && !s3TimeRack.equals("") && !timeXcasher.equals("") && cbCashier.getValue() != null){
+            
+           // System.out.println("melo");
+           inputGUI.setCashersNum(Integer.parseInt(cbCashier.getValue()));
+           inputGUI.setS2Time(Integer.parseInt(s2Time));
+           inputGUI.setS3TimeRack(Integer.parseInt(s3TimeRack));
+           inputGUI.setTimeXcasher(Integer.parseInt(timeXcasher)); 
+           
+           
+           stage.close();
+        }else{
+           /* Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText("Look, an Information Dialog");
+            alert.setContentText("I have a great message for you!");
+
+            alert.showAndWait();*/
+            mainGUI.alert(AlertType.INFORMATION, "Empty field", "Please complete the client information");
+
+        }
+
+
+
+        
     }
 }

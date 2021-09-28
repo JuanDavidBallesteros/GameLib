@@ -86,7 +86,7 @@ public class MainGUI extends Stage {
 
     public Stage addCashierView(InputGUI inputGUI) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Routes.ADD_CASHIER_VIEW.getRoute()));
-        ModalCashierGUI controller = new ModalCashierGUI(inputGUI);
+        ModalCashierGUI controller = new ModalCashierGUI(this,inputGUI);
         fxmlLoader.setController(controller);
         Parent modal = fxmlLoader.load();        
 

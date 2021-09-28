@@ -65,6 +65,7 @@ public class InputGUI {
                 clients.add(clientList.get(i));
             }
             app.setSimulation(s2Time, s3TimeRack, timeXcasher, cashersNum, clients);
+            System.out.println("HEREEEEEE "+ s2Time);
             mainGUI.storeView();
         }
 
@@ -104,6 +105,41 @@ public class InputGUI {
 
     public ArrayList<Client> getClientList() {
         return clientList;
+    }
+
+    public int getS2Time() {
+        return s2Time;
+    }
+
+    public void setS2Time(int s2Time) {
+        this.s2Time = s2Time;
+    }
+
+    public int getS3TimeRack() {
+        return s3TimeRack;
+    }
+
+    public void setS3TimeRack(int s3TimeRack) {
+        this.s3TimeRack = s3TimeRack;
+    }
+
+    public int getTimeXcasher() {
+        return timeXcasher;
+    }
+
+    public void setTimeXcasher(int timeXcasher) {
+        this.timeXcasher = timeXcasher;
+    }
+
+    public int getCashersNum() {
+        return cashersNum;
+    }
+
+    public void setCashersNum(int cashersNum) {
+        this.cashersNum = cashersNum;
     }    
+
+
+    
 
 }

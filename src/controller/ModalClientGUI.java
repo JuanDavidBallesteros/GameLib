@@ -75,7 +75,7 @@ public class ModalClientGUI {
 
     public void saveButton(ActionEvent event) {
         String id = tfId.getText();
-        if ( gamesSelected.size() > 0) {
+        if (!id.equals("") &&  gamesSelected.size() > 0) {
             
             boolean sortingAlgorithm = (Math.random() < 0.5) ? true : false;
             Client temp = new Client(UUID.randomUUID().toString(), id, inputGUI.getClientList().size(), sortingAlgorithm);
