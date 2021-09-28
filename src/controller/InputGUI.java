@@ -83,7 +83,7 @@ public class InputGUI {
     @FXML
     public void addCashierButton(ActionEvent event) {
         try {
-            mainGUI.addCashierView();
+            mainGUI.addCashierView(this);
         } catch (IOException e) {
 
             e.printStackTrace();

@@ -1,6 +1,7 @@
 package controller;
 
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,17 +15,25 @@ public class ModalCashierGUI {
     @FXML
     private JFXComboBox<String> cbCashier;
 
+    @FXML
+    private JFXTextField timeCasher;
+
+    @FXML
+    private JFXTextField timeRack;
+
+    @FXML
+    private JFXTextField timeTable;
+
     private MainGUI mainGUI;
     private App app;
 
     private Stage stage;
 
+    private InputGUI inputGUI;
 
-    public ModalCashierGUI(MainGUI mainGUI, App app) {
-        this.mainGUI = mainGUI;
-        this.app = app; 
-        
-       
+
+    public ModalCashierGUI(InputGUI inputGUI) {
+        this.inputGUI = inputGUI;
     }
 
     public void setStage(Stage stage) {
@@ -42,9 +51,11 @@ public class ModalCashierGUI {
         elements.addAll("1","2","3","4","5");
 
         cbCashier.setItems(elements);
-        
     }
 
+    @FXML
+    void save(ActionEvent event) {
 
-
+        stage.close();
+    }
 }
