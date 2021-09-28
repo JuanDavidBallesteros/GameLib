@@ -24,12 +24,12 @@ public class Main extends Application{
         }
 
         Simulation simul = new Simulation(app);
-       // simul.runSimulation();
-        launch(args);
+        simul.runSimulation();
+        //launch(args);
         
         
 
-        System.exit(0);
+       // System.exit(0);
     }
 
     @Override
