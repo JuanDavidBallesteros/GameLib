@@ -23,10 +23,13 @@ public class Main extends Application {
             e.printStackTrace();
         }
 
-        launch(args);
+        new Thread(()->{
+            launch(args);
+        }).start();
+
+        //launch(args);
 
         Simulation simul = new Simulation(app);
-
         simul.runSimulation();
 
         // System.exit(0);

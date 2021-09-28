@@ -8,7 +8,7 @@ import java.util.UUID;
 
 import exception.FullTable;
 import exception.NullKeyException;
-import javafx.application.Platform;
+//import javafx.application.Platform;
 import model.*;
 
 public class Simulation {
@@ -77,9 +77,9 @@ public class Simulation {
                     cases--;
                 }
                 
-                Platform.runLater(()->{
+                /* Platform.runLater(()->{
                     System.exit(0);
-                });
+                }); */
                 br.close();
 
                 app.responseStage();

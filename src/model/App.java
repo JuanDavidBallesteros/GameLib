@@ -159,7 +159,7 @@ public class App {
 
             System.out.println(line1);
             System.out.println(line2);
-            System.out.println("time:" + outList.top().getTime()); // Tiempo
+            //System.out.println("time:" + outList.top().getTime()); // Tiempo
 
             outList.pop();
         }
