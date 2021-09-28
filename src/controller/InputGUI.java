@@ -30,10 +30,6 @@ public class InputGUI {
         mainGUI.storeView();
     }
 
-
-   
-
-
     @FXML
     public void addClientButton(ActionEvent event)  {
         try {

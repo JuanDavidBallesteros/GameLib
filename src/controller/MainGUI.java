@@ -58,6 +58,7 @@ public class MainGUI extends Stage {
         fxmlLoader.setController(controller);
         Parent view = fxmlLoader.load();
         mainPane.getChildren().setAll(view);
+        controller.initializeTableView();
     }
 
     public Stage addClientView() throws IOException {

@@ -58,6 +58,16 @@ public class QueueTAD<T> implements QueueAction<T> {
         return size;
     }
 
+    public QueueTAD<T> clone(){
+        QueueTAD<T> temp = new QueueTAD<>();
+        Node node = first;
+        while (node != null) {
+            temp.add(node.getValue());
+            node = node.nextNode;
+        }
+        return temp;
+    }
+
     public class Node {
 
         private Node nextNode;
@@ -84,7 +94,7 @@ public class QueueTAD<T> implements QueueAction<T> {
 
     }
 
-    public void add(Rack rack) {
+    /* public void add(Rack rack) {
         Node temp =  new Node(rack);
         if(first == null){
             first = temp;
@@ -101,5 +111,5 @@ public class QueueTAD<T> implements QueueAction<T> {
                 node = node.getNextNode();
             }
         }
-    }
+    } */
 }
