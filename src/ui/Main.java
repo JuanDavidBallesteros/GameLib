@@ -32,7 +32,6 @@ public class Main extends Application {
         Simulation simul = new Simulation(app);
         simul.runSimulation();
 
-        // System.exit(0);
     }
 
     @Override
