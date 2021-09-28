@@ -32,13 +32,13 @@ public class Main extends Application {
 
        // System.exit(0);
 =======*/
-       // launch(args);
+        launch(args);
 
-        Simulation simul = new Simulation(app);
+        //Simulation simul = new Simulation(app);
 
-        simul.runSimulation();
+        //simul.runSimulation();
 
-        // System.exit(0);
+        System.exit(0);
 //>>>>>>> 36f000a33f4d08bbe1ed5e0f30f7a80e46b7daee
     }
 

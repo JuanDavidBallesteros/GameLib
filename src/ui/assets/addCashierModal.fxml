@@ -5,17 +5,36 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <JFXButton layoutX="87.0" layoutY="288.0" text="Button" />
-      <JFXButton layoutX="185.0" layoutY="288.0" onAction="#returnButton" text="Return" />
-      <JFXComboBox fx:id="cbCashier" layoutX="113.0" layoutY="105.0" promptText="Number of Cashiers">
+      <JFXButton layoutX="87.0" layoutY="335.0" prefHeight="31.0" prefWidth="63.0" styleClass="save" stylesheets="@../../style/StyleAddCashierModal.css" text="Save" textAlignment="CENTER" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Consolas Bold Italic" size="14.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="208.0" layoutY="335.0" onAction="#returnButton" styleClass="return" stylesheets="@../../style/StyleAddCashierModal.css" text="Return" textAlignment="CENTER" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Consolas Bold Italic" size="14.0" />
+         </font></JFXButton>
+      <JFXComboBox fx:id="cbCashier" layoutX="113.0" layoutY="105.0" promptText="Number of Cashiers" unFocusColor="#e60f0f">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXComboBox>
-      <JFXTextField layoutX="113.0" layoutY="175.0" promptText="Time" />
-      <JFXTextField layoutX="113.0" layoutY="237.0" promptText="Time" />
+      <JFXTextField layoutX="113.0" layoutY="175.0" promptText="Time" unFocusColor="#f21111">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></JFXTextField>
+      <JFXTextField focusColor="#0b3ac9" layoutX="113.0" layoutY="237.0" promptText="Time" unFocusColor="#d90c0c">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></JFXTextField>
    </children>
 </Pane>
