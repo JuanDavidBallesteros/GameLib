@@ -47,6 +47,10 @@ public class Client {
         return gamesList;
     }
 
+    public void setGamesList(ArrayList<Game> gamesList) {
+        this.gamesList = gamesList;
+    }
+
     public String getListCode() {
         return listCode;
     }

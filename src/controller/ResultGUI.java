@@ -59,8 +59,8 @@ public class ResultGUI {
         outList.setItems(observableList);
 
 		clientId.setCellValueFactory(new PropertyValueFactory<Client,String>("id")); 
-		purchaseAmount.setCellValueFactory(new PropertyValueFactory<Client,Integer>("Amount"));
-        bagCol.setCellValueFactory(new PropertyValueFactory<Client, String>("Rack"));
+		purchaseAmount.setCellValueFactory(new PropertyValueFactory<Client,Integer>("purchaseValue"));
+        bagCol.setCellValueFactory(new PropertyValueFactory<Client, String>("bag"));
         
     }
 }

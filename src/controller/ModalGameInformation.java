@@ -12,14 +12,10 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.stage.Stage;
-import model.App;
 
 public class ModalGameInformation {
    
     private Font textEdit = Font.font("Comic Sans",FontPosture.ITALIC, 15);
-    
-    private MainGUI mainGUI;
-    private App app;
 
     private Stage stage;
 
@@ -33,9 +29,7 @@ public class ModalGameInformation {
     private JFXComboBox<String> cbCodeGame;
    
    
-    public ModalGameInformation(MainGUI mainGUI, App app) {
-        this.mainGUI = mainGUI;
-        this.app = app;    
+    public ModalGameInformation() {
     }
 
 

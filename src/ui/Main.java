@@ -27,8 +27,6 @@ public class Main extends Application {
             launch(args);
         }).start();
 
-        //launch(args);
-
         Simulation simul = new Simulation(app);
         simul.runSimulation();
 

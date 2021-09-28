@@ -61,7 +61,7 @@ public class MainGUI extends Stage {
         controller.initializeTableView();
     }
 
-    public Stage addClientView() throws IOException {
+    public Stage addClientView(InputGUI inputGUI) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Routes.ADD_CLIENT_VIEW.getRoute()));
         ModalClientGUI controller = new ModalClientGUI(this, app);
         fxmlLoader.setController(controller);
@@ -76,6 +76,7 @@ public class MainGUI extends Stage {
         stage.initStyle(StageStyle.TRANSPARENT);
         controller.setStage(stage);
         controller.initializeTableView();
+        controller.setInputGUI(inputGUI);
 
         stage.show();
         
@@ -111,7 +112,7 @@ public class MainGUI extends Stage {
    
     public Stage informationGame() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Routes.GAME_INFORMATION_VIEW.getRoute()));
-        ModalGameInformation controller = new ModalGameInformation(this, app);
+        ModalGameInformation controller = new ModalGameInformation();
         fxmlLoader.setController(controller);
         Parent modal = fxmlLoader.load();
 
