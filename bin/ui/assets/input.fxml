@@ -43,8 +43,20 @@
             </Separator>
          </children>
       </Pane>
-      <JFXButton layoutX="805.0" layoutY="401.0" onAction="#addClientButton" text="Add Client" />
-      <JFXButton layoutX="938.0" layoutY="401.0" onAction="#addCashierButton" text="Add Cashier" />
+      <JFXButton layoutX="692.0" layoutY="407.0" onAction="#addClientButton" styleClass="addClient" stylesheets="@../../style/StyleInput.css" text="Add Client" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Consolas Bold Italic" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton layoutX="887.0" layoutY="407.0" onAction="#addCashierButton" styleClass="addCashier" stylesheets="@../../style/StyleInput.css" text="Add Cashier" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Consolas Bold Italic" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
       <TableView layoutX="555.0" layoutY="90.0" prefHeight="200.0" prefWidth="400.0">
         <columns>
           <TableColumn prefWidth="133.0" text="CC" />

@@ -1,0 +1,48 @@
+
+.search:hover{
+    -fx-background-color: #000000;
+    -fx-border-color: #fc7791;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.search{
+    -fx-border-radius: 40px;
+    -fx-border-width:  2px 2px 2px 2px;
+    -fx-border-color:  #fc7791;
+    -fx-background-color:   #1D1B20;
+    -fx-background-radius: 40px;
+}
+
+
+
+.ok:hover{
+    -fx-background-color: #000000;
+    -fx-border-color: #fc7791;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.ok{
+    -fx-border-radius: 40px;
+    -fx-border-width:  2px 2px 2px 2px;
+    -fx-border-color:  #fc7791;
+    -fx-background-color:   #1D1B20;
+    -fx-background-radius: 40px;
+}
+
+
+.text{
+    -fx-border-radius: 20px;
+    -fx-border-width: 8px 8px 8px 8px;
+    -fx-border-color: #fc7791;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 40px;
+}
+
+
+.title{
+    -fx-border-radius: 20px;
+    -fx-border-width: 6px 6px 6px 6px;
+    -fx-border-color: #000000;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 40px;
+}

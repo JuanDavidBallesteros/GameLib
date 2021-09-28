@@ -1,0 +1,133 @@
+* {
+    -fx-primary : #2A2E37;
+    -fx-secondary : #FFFF8D;
+    -fx-primarytext : white;
+    -fx-blue: #1976D2;
+    -fx-red: #FF0000;
+    -fx-color-1:#1976D2;
+    
+}
+
+.tab{
+    -fx-background-color:  derive(-fx-primary, 20%);
+}
+
+.tab-header-background{
+    -fx-background-color: -fx-primary;
+}
+
+.tab-label{
+    -fx-text-fill: -fx-secondary;
+    
+}
+
+
+.settings-tab{
+    -fx-background-color: derive(-fx-primary, 10%);
+    -fx-padding: 5px 20px 5px 20px;
+}
+
+.settings-tab:selected{
+    -fx-background-color: -fx-secondary;
+}
+
+.settings-tab:selected .tab-label{
+    -fx-text-fill: -fx-primary;
+}
+
+.settings-tab .tab-header-background{
+    -fx-background-color: derive(-fx-primary, -50%);
+}
+
+/*TableView Default*/
+.table-view{
+    -fx-background-color: derive(-fx-primary, 10%);
+ 
+    -fx-border-color: derive(-fx-secondary, -60%);
+}
+.table-view:focused{
+    -fx-background-color: derive(-fx-primary, 20%);
+}
+.table-row-cell {
+    -fx-cell-size: 40px;
+}
+.table-view .column-header-background{
+    -fx-background-color: -fx-primary;
+}
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+.table-row-cell:focused, .table-cell:focused{
+    -fx-text-fill: -fx-primary;
+}
+.table-row-cell{
+    -fx-background-color: -fx-primary;
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color: transparent;
+}
+.table-column{
+    -fx-alignment: CENTER;  
+}
+.table-row-cell:even{
+    -fx-background-color: derive(-fx-primary, 10%);
+}
+.table-row-cell:selected {
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: -fx-primary;
+    -fx-background-insets: 0;
+}
+.table-row-cell:selected .table-cell{
+    -fx-text-fill: -fx-primary;
+}
+
+.gamesView:hover{
+    -fx-background-color: #000000;
+    -fx-border-color: #fc7791;
+    -fx-border-width: 0px 0px 3px 0px;
+
+}
+
+.gamesView{
+    -fx-border-radius: 40px;
+    -fx-border-width:  2px 2px 2px 2px;
+    -fx-border-color:  #fc7791;
+    -fx-background-color:   #1D1B20;
+    -fx-background-radius: 40px;
+
+}
+
+
+.save:hover{
+    -fx-background-color: #000000;
+    -fx-border-color: #fc7791;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.save{
+    -fx-border-radius: 40px;
+    -fx-border-width:  2px 2px 2px 2px;
+    -fx-border-color:  #fc7791;
+    -fx-background-color:   #1D1B20;
+    -fx-background-radius: 40px;
+}
+
+.cancel:hover{
+    -fx-background-color: #000000;
+    -fx-border-color: #fc7791;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+
+.cancel{
+    -fx-border-radius: 40px;
+    -fx-border-width:  2px 2px 2px 2px;
+    -fx-border-color:  #fc7791;
+    -fx-background-color:   #1D1B20;
+    -fx-background-radius: 40px;
+}
