@@ -65,7 +65,7 @@ public class InputGUI {
                 clients.add(clientList.get(i));
             }
             app.setSimulation(s2Time, s3TimeRack, timeXcasher, cashersNum, clients);
-            System.out.println("HEREEEEEE "+ s2Time);
+            //System.out.println("HEREEEEEE "+ s2Time);
             mainGUI.storeView();
         }
 
