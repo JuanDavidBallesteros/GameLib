@@ -17,7 +17,7 @@
 }
 
 .tab-label{
-    -fx-text-fill: -fx-secondary;
+    -fx-text-fill: #fc7791;
     
 }
 
@@ -28,7 +28,7 @@
 }
 
 .settings-tab:selected{
-    -fx-background-color: -fx-secondary;
+    -fx-background-color: #fc7791;
 }
 
 .settings-tab:selected .tab-label{
@@ -43,7 +43,7 @@
 .table-view{
     -fx-background-color: derive(-fx-primary, 10%);
  
-    -fx-border-color: derive(-fx-secondary, -60%);
+    -fx-border-color: derive(#fc7791, -60%);
 }
 .table-view:focused{
     -fx-background-color: derive(-fx-primary, 20%);
@@ -79,7 +79,7 @@
     -fx-background-color: derive(-fx-primary, 10%);
 }
 .table-row-cell:selected {
-    -fx-background-color: -fx-secondary;
+    -fx-background-color: #fc7791;
     -fx-text-fill: -fx-primary;
     -fx-background-insets: 0;
 }

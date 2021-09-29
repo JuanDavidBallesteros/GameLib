@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -90,4 +91,7 @@
          </children>
       </HBox>
    </center>
+   <right>
+      <Pane prefHeight="800.0" prefWidth="400.0" style="-fx-background-image: url('/img/VideoGame.jpg'); -fx-background-size: 100% 100%;" BorderPane.alignment="CENTER" />
+   </right>
 </BorderPane>
