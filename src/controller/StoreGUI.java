@@ -16,7 +16,7 @@ public class StoreGUI {
     private MainGUI mainGUI;
     private App app;
 
-    private final static int WAITING_TIME = 2500;
+    private final static int WAITING_TIME = 2250;
 
     @FXML
     private JFXTextArea Stage2TA;
@@ -63,7 +63,7 @@ public class StoreGUI {
     private void simulateStage4(){
         new Thread(()->{
             try {
-                Thread.sleep(WAITING_TIME);
+                Thread.sleep(WAITING_TIME*2);
                 Platform.runLater(()->{
                     app.passStage4();
                     callInfoS4(Stage4TA);
@@ -141,7 +141,11 @@ public class StoreGUI {
                 games.push(list.get(i).getBasket().pop());
             }
 
-            list.get(i).setBasket(games);
+            while (!games.isEmpty()) {
+                list.get(i).getBasket().push(games.pop());
+            }
+
+            
             stageTA.appendText(line1 + "\n");
             stageTA.appendText(line2 + "\n");
         }
@@ -173,7 +177,11 @@ public class StoreGUI {
                 games.push(list.get(i).getBag().getGames().pop());
             }
 
-            list.get(i).getBag().setGames(games);
+            while (!games.isEmpty()) {
+                list.get(i).getBag().getGames().push(games.pop());
+            }
+
+            //list.get(i).getBag().setGames(games);
             stageTA.appendText(line1 + "\n");
             stageTA.appendText(line2 + "\n");
         }
