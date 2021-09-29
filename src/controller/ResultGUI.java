@@ -9,7 +9,11 @@ import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
+import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -61,6 +65,13 @@ public class ResultGUI {
 		clientId.setCellValueFactory(new PropertyValueFactory<Client,String>("id")); 
 		purchaseAmount.setCellValueFactory(new PropertyValueFactory<Client,Integer>("purchaseValue"));
         bagCol.setCellValueFactory(new PropertyValueFactory<Client, String>("bag"));
+
+        bagCol.setCellValueFactory(new Callback<CellDataFeatures<Client, String>, ObservableValue<String>>() {
+            @Override
+            public ObservableValue<String> call(CellDataFeatures<Client, String> data) {
+                return new ReadOnlyStringWrapper(data.getValue().getBag().toString());
+            }
+        });
         
     }
 }

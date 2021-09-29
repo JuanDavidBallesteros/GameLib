@@ -9,7 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
-import model.App;
 
 public class ModalCashierGUI {
 
@@ -26,7 +25,6 @@ public class ModalCashierGUI {
     private JFXTextField timeTable;
 
     private MainGUI mainGUI;
-    private App app;
 
     private Stage stage;
 
