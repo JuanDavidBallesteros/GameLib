@@ -2,6 +2,7 @@ package controller;
 
 import model.App;
 import model.Client;
+import model.StackTAD;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -53,9 +54,13 @@ public class ResultGUI {
     public void initializeTableView() {
 
         ArrayList<Client> list = new ArrayList<>();
+        StackTAD<Client> temp = new StackTAD<>();
         
         while (!app.getClients().isEmpty()) {
-            list.add(app.getClients().dequeue());
+            temp.push(app.getClients().dequeue());
+        }
+        while (!temp.isEmpty()) {
+            list.add(temp.pop());
         }
 
         ObservableList<Client> observableList = FXCollections.observableArrayList(list);

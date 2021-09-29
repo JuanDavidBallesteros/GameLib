@@ -78,7 +78,7 @@
                      <columns>
                         <TableColumn fx:id="clientId" prefWidth="75.0" text="Client" />
                         <TableColumn fx:id="purchaseAmount" prefWidth="114.0" text="PurchaseAmount" />
-                        <TableColumn fx:id="bagCol" prefWidth="69.0" text="Package" />
+                        <TableColumn fx:id="bagCol" prefWidth="250.0" text="Package" />
                      </columns>
                      <VBox.margin>
                         <Insets left="10.0" right="10.0" top="30.0" />
