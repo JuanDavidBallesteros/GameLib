@@ -8,13 +8,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f1f3f4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <JFXButton layoutX="53.0" layoutY="350.0" onAction="#returnAddClient" styleClass="ok" stylesheets="@../../style/StyleGameInformationModal.css" text="Ok" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
-      <JFXTextArea fx:id="taGameText" editable="false" focusColor="#6d10c5" layoutX="68.0" layoutY="156.0" styleClass="text" stylesheets="@../../style/StyleGameInformationModal.css" unFocusColor="#e40b0b" />
+      <JFXTextArea fx:id="taGameText" editable="false" focusColor="#6d10c5" layoutX="39.0" layoutY="160.0" styleClass="text" stylesheets="@../../style/StyleGameInformationModal.css" unFocusColor="#e40b0b" />
       <Label fx:id="lbGameName" alignment="CENTER" contentDisplay="CENTER" layoutX="137.0" layoutY="86.0" prefHeight="60.0" prefWidth="325.0" styleClass="title" stylesheets="@../../style/StyleGameInformationModal.css" textAlignment="CENTER" textFill="#fc7791" wrapText="true">
          <font>
             <Font name="Consolas Bold Italic" size="18.0" />
